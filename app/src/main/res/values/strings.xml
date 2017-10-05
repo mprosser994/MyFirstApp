@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">My First App</string>
+    <string name="btn_ui">View UI Elements</string>
+    <string name="btn_sys">View System Calls</string>
+    <string name="success">It worked!!</string>
+    <string name="tbl_cell">Table Cell</string>
+    <string name="btn_gps">Show My Current Location</string>
+    <string name="location_init">Lat.: 0.0, Long.: 0.0</string>
+    <string-array name="dropdown_list">
+        <item>First Dropdown Choice</item>
+        <item>Second Dropdown Choice</item>
+        <item>Third Dropdown Choice</item>
+    </string-array>
+    <string-array name="table_list">
+        <item>First List Item</item>
+        <item>Second List Item</item>
+        <item>Third List Item</item>
+    </string-array>
+</resources>
