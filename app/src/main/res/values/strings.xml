@@ -4,7 +4,8 @@
     <string name="btn_sys">View System Calls</string>
     <string name="success">It worked!!</string>
     <string name="tbl_cell">Table Cell</string>
-    <string name="btn_gps">Show My Current Location</string>
+    <string name="btn_gps">Get Current Location</string>
+    <string name="btn_showData">Show Data</string>
     <string name="location_init">Lat.: 0.0, Long.: 0.0</string>
     <string-array name="dropdown_list">
         <item>First Dropdown Choice</item>
@@ -15,5 +16,9 @@
         <item>First List Item</item>
         <item>Second List Item</item>
         <item>Third List Item</item>
+    </string-array>
+    <string-array name="gps_dropdown">
+        <item>Access Fine Location</item>
+        <item>Access Coarse Location</item>
     </string-array>
 </resources>
