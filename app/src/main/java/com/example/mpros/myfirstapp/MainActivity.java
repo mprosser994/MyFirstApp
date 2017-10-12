@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    /** Called when the user taps the Send button */
     public void viewUI(View view) {
         Intent intent = new Intent(this, DisplayUIActivity.class);
         startActivity(intent);
