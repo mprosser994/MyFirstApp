@@ -7,6 +7,7 @@
     <string name="btn_gps">Get Current Location</string>
     <string name="btn_showData">Show Data</string>
     <string name="location_init">Lat.: 0.0, Long.: 0.0</string>
+    <string name="location_err">There was an error getting your location.</string>
     <string-array name="dropdown_list">
         <item>First Dropdown Choice</item>
         <item>Second Dropdown Choice</item>
