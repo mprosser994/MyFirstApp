@@ -3,11 +3,16 @@
     <string name="btn_ui">View UI Elements</string>
     <string name="btn_sys">View System Calls</string>
     <string name="success">It worked!!</string>
+    <string name="err">Error</string>
     <string name="tbl_cell">Table Cell</string>
     <string name="btn_gps">Get Current Location</string>
     <string name="btn_showData">Show Data</string>
     <string name="location_init">Lat.: 0.0, Long.: 0.0</string>
     <string name="location_err">There was an error getting your location.</string>
+    <string name="gps_time">Time</string>
+    <string name="gps_lat">Latitude</string>
+    <string name="gps_lon">Longitude</string>
+    <string name="gps_provider">Provider</string>
     <string-array name="dropdown_list">
         <item>First Dropdown Choice</item>
         <item>Second Dropdown Choice</item>

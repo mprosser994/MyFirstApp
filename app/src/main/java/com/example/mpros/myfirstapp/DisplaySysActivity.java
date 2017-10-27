@@ -21,6 +21,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -151,9 +153,23 @@ public class DisplaySysActivity extends AppCompatActivity {
         Cursor cursor = getInfo();
         if (cursor != null) {
             String[][] results = getResults(cursor);
-            // put results in a table
+            fillTable(results);
             cursor.close();
         }
+    }
+
+    private void fillTable(String[][] results) {
+        TableLayout table = (TableLayout) findViewById(R.id.gps_table);
+        for (int i = 1; i < 11; i++) {
+            TableRow row = table.findViewById(i);
+            row.setVisibility(View.VISIBLE);
+            for (int j = 1; j < 5; j++) {
+                TextView cell = row.findViewById(j * 100);
+                cell.setText(results[i-1][j-1]);
+                cell.setVisibility(View.VISIBLE);
+            }
+        }
+        table.setVisibility(View.VISIBLE);
     }
 
     private void setup() {
@@ -182,6 +198,7 @@ public class DisplaySysActivity extends AppCompatActivity {
         };
         textView = (TextView) findViewById(R.id.textView);
         setupSpinner();
+        setupTable();
     }
 
     private void setupSpinner() {
@@ -203,6 +220,50 @@ public class DisplaySysActivity extends AppCompatActivity {
             }
         };
         dropdown.setOnItemSelectedListener(listener);
+    }
+
+    private void setupTable() {
+        TableLayout table = (TableLayout) findViewById(R.id.gps_table);
+        for (int i = 0; i < 11; i++) {
+            TableRow row = new TableRow(this);
+            row.setLayoutParams(new TableRow.LayoutParams(
+                    TableRow.LayoutParams.MATCH_PARENT,
+                    TableRow.LayoutParams.WRAP_CONTENT
+            ));
+            row.setId(i);
+            for (int j = 1; j < 5; j++) {
+                TextView cell = new TextView(this);
+                cell.setLayoutParams(new TableRow.LayoutParams(
+                        TableRow.LayoutParams.MATCH_PARENT,
+                        TableRow.LayoutParams.WRAP_CONTENT
+                ));
+                cell.setId(j * 100);
+                if (i == 0) {
+                    switch (j) {
+                        case 1:
+                            cell.setText(getResources().getString(R.string.gps_time));
+                            break;
+                        case 2:
+                            cell.setText(getResources().getString(R.string.gps_lat));
+                            break;
+                        case 3:
+                            cell.setText(getResources().getString(R.string.gps_lon));
+                            break;
+                        case 4:
+                            cell.setText(getResources().getString(R.string.gps_provider));
+                            break;
+                        default:
+                            cell.setText(getResources().getString(R.string.err));
+                            break;
+                    }
+                }
+                row.addView(cell);
+            }
+            table.addView(row, new TableRow.LayoutParams(
+                    TableRow.LayoutParams.MATCH_PARENT,
+                    TableRow.LayoutParams.WRAP_CONTENT)
+            );
+        }
     }
 
     private Cursor getInfo() {
