@@ -145,7 +145,20 @@ public class DisplaySysActivity extends AppCompatActivity {
         vals.put(LocalDBContract.LocationInfo.COL_NAME_TIME, DateFormat.getDateTimeInstance().format(new Date()));
         vals.put(LocalDBContract.LocationInfo.COL_NAME_LAT, location.getLatitude());
         vals.put(LocalDBContract.LocationInfo.COL_NAME_LONG, location.getLongitude());
-        vals.put(LocalDBContract.LocationInfo.COL_NAME_PROVIDER, provider);
+
+        String p;
+        switch (provider) {
+            case "Access Fine Location":
+                p = "GPS";
+                break;
+            case "Access Coarse Location":
+                p = "Network";
+                break;
+            default:
+                p = "ERR";
+                break;
+        }
+        vals.put(LocalDBContract.LocationInfo.COL_NAME_PROVIDER, p);
         localDb.insert(LocalDBContract.LocationInfo.TABLE_NAME, null, vals);
     }
 
