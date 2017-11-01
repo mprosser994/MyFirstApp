@@ -26,6 +26,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DisplaySysActivity extends AppCompatActivity {
@@ -35,6 +36,7 @@ public class DisplaySysActivity extends AppCompatActivity {
     private SQLiteDatabase localDb;
     private Object dropdownItem;
     private TextView textView;
+    private DateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm:ss");
     private static String SQL_CREATE_ENTRIES =
             "Create Table " + LocalDBContract.LocationInfo.TABLE_NAME +
                     " (" + LocalDBContract.LocationInfo._ID + " INTEGER PRIMARY KEY," +
@@ -142,7 +144,7 @@ public class DisplaySysActivity extends AppCompatActivity {
             }
         }
         ContentValues vals = new ContentValues();
-        vals.put(LocalDBContract.LocationInfo.COL_NAME_TIME, DateFormat.getDateTimeInstance().format(new Date()));
+        vals.put(LocalDBContract.LocationInfo.COL_NAME_TIME, dateFormat.format(new Date()));
         vals.put(LocalDBContract.LocationInfo.COL_NAME_LAT, location.getLatitude());
         vals.put(LocalDBContract.LocationInfo.COL_NAME_LONG, location.getLongitude());
 

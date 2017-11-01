@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CIMON</string>
+    <string name="welcome_msg">
+        Welcome to CIMON!\n
+        Please enter your email below. We will send a confirmation code
+        to the email you provide, so please ensure it is correct.
+    </string>
+    <string name="email">Enter email</string>
+    <string name="register_text">Send Code</string>
+</resources>
