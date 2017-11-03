@@ -36,4 +36,10 @@ public class EnterCodeActivity extends AppCompatActivity {
             code_txt.setError("The code you entered is incorrect");
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        // Instead of taking user back to another activity, do nothing
+        // Maybe just exit app instead?
+    }
 }

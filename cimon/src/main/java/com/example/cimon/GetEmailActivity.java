@@ -36,4 +36,10 @@ public class GetEmailActivity extends AppCompatActivity {
             email_txt.setError("Please enter a valid email address");
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        // Instead of taking user back to Main Activity, do nothing
+        // Maybe just exit app instead?
+    }
 }
