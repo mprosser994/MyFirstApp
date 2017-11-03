@@ -1,1 +1,1 @@
-include ':app', ':cimon'
+include ':test_app', ':cimon'

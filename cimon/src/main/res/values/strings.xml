@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">CIMON</string>
+    <!-- Strings for Shared Preferences -->
+    <string name="prefs_file_key">com.example.cimon.prefs_file</string>
+    <string name="login_state">LoginState</string>
+    <string name="login_state_new_user">New User</string>
+    <string name="login_state_code_sent">Code Sent</string>
+    <string name="login_state_logged_in">Logged In</string>
+
+    <!-- Strings for GetEmailActivity -->
     <string name="welcome_msg">
         Welcome to CIMON!\n
         Please enter your email below. We will send a confirmation code
@@ -7,4 +15,10 @@
     </string>
     <string name="email">Enter email</string>
     <string name="register_text">Send Code</string>
+
+    <!-- Strings for EnterCodeActivity -->
+    <string name="enter_code_msg">
+        Please enter the 4-digit code sent to the email address you provided.
+    </string>
+    <string name="confirm">Confirm</string>
 </resources>

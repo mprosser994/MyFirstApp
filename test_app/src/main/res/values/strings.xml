@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My First App</string>
+    <string name="app_name">Test App</string>
     <string name="btn_ui">View UI Elements</string>
     <string name="btn_sys">View System Calls</string>
     <string name="success">It worked!!</string>
