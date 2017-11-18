@@ -21,4 +21,9 @@
         Please enter the 4-digit code sent to the email address you provided.
     </string>
     <string name="confirm">Confirm</string>
+    <string name="notif">
+        Email sent to: %s \n
+        Not you?
+    </string>
+    <string name="goback">Go back</string>
 </resources>
