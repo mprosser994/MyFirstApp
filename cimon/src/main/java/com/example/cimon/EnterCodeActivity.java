@@ -113,6 +113,15 @@ public class EnterCodeActivity extends AppCompatActivity {
         startActivity(new Intent(this, MainActivity.class));
     }
 
+    public void goBack(View view) {
+        // Set user state to "New User"
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString(getString(R.string.login_state), getResources().getString(R.string.login_state_new_user));
+        editor.apply();
+
+        startActivity(new Intent(this, GetEmailActivity.class));
+    }
+
     @Override
     public void onBackPressed() {
         // Instead of taking user back to another activity, do nothing
