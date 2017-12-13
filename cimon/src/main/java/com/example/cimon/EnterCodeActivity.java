@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.system.ErrnoException;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -29,21 +28,26 @@ public class EnterCodeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter_code);
 
+        // Build the CIMON web service
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://129.74.247.110/cimoninterface/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         service = retrofit.create(CimonService.class);
 
+        // Initialize the SharedPreferences file for use
         prefs = this.getSharedPreferences(
                 getString(R.string.prefs_file_key), Context.MODE_PRIVATE
         );
+
+        // Notify user what email they've entered
         String email = prefs.getString("email", "");
         String msg = getString(R.string.notif, email);
         TextView textView = (TextView) findViewById(R.id.txt_notif);
         textView.setText(msg);
     }
 
+    // Called on button press
     public void ConfirmCode(View view) {
         EditText code_txt = (EditText) findViewById(R.id.txt_code);
         String code = code_txt.getText().toString();

@@ -6,10 +6,6 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
 
 import static android.content.ContentValues.TAG;
 
-/**
- * Created by mpros on 11/22/2017.
- */
-
 public class FirebaseService extends FirebaseInstanceIdService {
     @Override
     public void onTokenRefresh() {

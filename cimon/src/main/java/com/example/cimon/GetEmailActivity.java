@@ -30,19 +30,23 @@ public class GetEmailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_email);
 
+        // Build the CIMON web service
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://129.74.247.110/cimoninterface/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         service = retrofit.create(CimonService.class);
 
+        // Initialize the SharedPreferences file for use
         prefs = this.getSharedPreferences(
                 getString(R.string.prefs_file_key), Context.MODE_PRIVATE
         );
 
+        // If it doesn't exist yet, generate a UUID to help identify the user to the server
         generateUUID();
     }
 
+    // Called on button press
     public void SendCode(View view) {
         EditText email_txt = (EditText) findViewById(R.id.txt_email);
         String email = email_txt.getText().toString();

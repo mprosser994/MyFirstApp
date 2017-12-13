@@ -11,6 +11,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        startAppropriateActivity();
+    }
+
+    // Checks Preferences file for user login status and starts the appropriate activity
+    private void startAppropriateActivity() {
         String logged_in = getResources().getString(R.string.login_state_logged_in);
         String code_sent = getResources().getString(R.string.login_state_code_sent);
 

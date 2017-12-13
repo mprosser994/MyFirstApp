@@ -144,7 +144,7 @@ public class DisplaySysActivity extends AppCompatActivity {
             }
         }
         ContentValues vals = new ContentValues();
-        vals.put(LocalDBContract.LocationInfo.COL_NAME_TIME, dateFormat.format(new Date()));
+        vals.put(LocalDBContract.LocationInfo.COL_NAME_TIME, dateFormat.format(new Date(location.getTime())));
         vals.put(LocalDBContract.LocationInfo.COL_NAME_LAT, location.getLatitude());
         vals.put(LocalDBContract.LocationInfo.COL_NAME_LONG, location.getLongitude());
 
